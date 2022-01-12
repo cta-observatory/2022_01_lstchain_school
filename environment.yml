@@ -28,6 +28,7 @@ dependencies:
   - pymongo
   - seaborn
   - ipympl
+  - vitables
   - pip:
       - ctapipe_io_lst~=0.13.2
       - ctaplot
