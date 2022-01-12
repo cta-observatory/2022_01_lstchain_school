@@ -1,0 +1,35 @@
+name: lst-school
+channels:
+  - conda-forge
+  - default
+dependencies:
+  - python=3.8
+  - astropy~=4.2
+  - pip
+  - ctapipe~=0.11
+  - gammapy=0.18
+  - h5py
+  - ipython
+  - jupyter
+  - matplotlib>=3.5
+  - notebook
+  - joblib
+  - toml
+  - protozfits=2.0
+  - pyparsing
+  - sphinx~=4.2
+  - sphinx-automodapi
+  - sphinx_rtd_theme
+  - sphinx-argparse
+  - nbsphinx
+  - numpydoc
+  - traitlets=5.0
+  - pandas
+  - pymongo
+  - seaborn
+  - ipympl
+  - pip:
+      - ctapipe_io_lst~=0.13.2
+      - ctaplot
+      - pyirf~=0.5.0
+      - lstchain==0.8.2.post1
