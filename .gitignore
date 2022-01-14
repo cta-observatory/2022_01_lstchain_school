@@ -1,3 +1,5 @@
+*.h5
+*.fits
 data
 *.provenance.log
 # Byte-compiled / optimized / DLL files
