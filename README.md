@@ -8,6 +8,26 @@ Download the repository to your computer:
 git clone https://github.com/cta-observatory/2022_01_lstchain_school.git
 ```
 
+## Install
+
+- You will need to install [miniconda](https://docs.conda.io/en/latest/miniconda.html) (recommended) or [anaconda](https://www.anaconda.com/distribution/#download-section) first. 
+
+
+### In your computer
+
+```
+conda env create -n -f environment.yml
+conda activate lst-school
+```
+
+### In the IT cluster
+
+```
+source /fefs/aswg/software/conda/etc/profile.d/conda.sh
+conda env create -n -f environment.yml
+conda activate lst-school
+```
+
 
 ## LST data
 
