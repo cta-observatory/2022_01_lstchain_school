@@ -8,6 +8,18 @@ Download the repository to your computer:
 git clone https://github.com/cta-observatory/2022_01_lstchain_school.git
 ```
 
+## Install
+
+- You will need to install [mamba](https://github.com/conda-forge/miniforge#mambaforge) 
+
+
+then, in the folder where you cloned your repo:
+
+```
+mamba env create -f environment.yml
+mamba activate lst-school
+```
+
 
 ## LST data
 
@@ -19,3 +31,6 @@ To download the data, run this command from the base directory of this repositor
 ```
 rsync -a --info=progress2 ctan-cp01:/fefs/aswg/workspace/analysis-school-2022/ data/
 ```
+
+If you are on macOS, either install a more recent rsync using brew or leave out the --info option.
+
