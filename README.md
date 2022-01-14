@@ -10,22 +10,14 @@ git clone https://github.com/cta-observatory/2022_01_lstchain_school.git
 
 ## Install
 
-- You will need to install [miniconda](https://docs.conda.io/en/latest/miniconda.html) (recommended) or [anaconda](https://www.anaconda.com/distribution/#download-section) first. 
+- You will need to install [mamba](https://github.com/conda-forge/miniforge#mambaforge) 
 
 
-### In your computer
-
-```
-conda env create -f environment.yml
-conda activate lst-school
-```
-
-### In the IT cluster
+then, in the folder where you cloned your repo:
 
 ```
-source /fefs/aswg/software/conda/etc/profile.d/conda.sh
-conda env create -f environment.yml
-conda activate lst-school
+mamba env create -f environment.yml
+mamba activate lst-school
 ```
 
 
