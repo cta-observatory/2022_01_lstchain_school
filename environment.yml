@@ -4,6 +4,7 @@ channels:
   - default
 dependencies:
   - python=3.8
+  - numpy=1.21
   - astropy~=4.2
   - pip
   - ctapipe~=0.11
@@ -11,12 +12,12 @@ dependencies:
   - h5py
   - ipython
   - jupyter
-  - matplotlib>=3.5
+  - matplotlib=3.4
   - notebook
   - joblib
   - toml
   - protozfits=2.0
-  - pyparsing
+  - pyparsing=2.4
   - sphinx~=4.2
   - sphinx-automodapi
   - sphinx_rtd_theme
@@ -31,6 +32,6 @@ dependencies:
   - vitables
   - pip:
       - ctapipe_io_lst~=0.13.2
-      - ctaplot
+      - ctaplot~=0.5.5 
       - pyirf~=0.5.0
-      - lstchain==0.8.3
+      - lstchain==0.8.4
