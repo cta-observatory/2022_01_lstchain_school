@@ -1,4 +1,4 @@
-name: lst-school
+name: lst-school-2022-01
 channels:
   - conda-forge
   - default
