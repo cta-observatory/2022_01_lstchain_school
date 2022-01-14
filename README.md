@@ -16,7 +16,7 @@ git clone https://github.com/cta-observatory/2022_01_lstchain_school.git
 ### In your computer
 
 ```
-conda env create -n -f environment.yml
+conda env create -f environment.yml
 conda activate lst-school
 ```
 
@@ -24,7 +24,7 @@ conda activate lst-school
 
 ```
 source /fefs/aswg/software/conda/etc/profile.d/conda.sh
-conda env create -n -f environment.yml
+conda env create -f environment.yml
 conda activate lst-school
 ```
 
