@@ -1,0 +1,36 @@
+{
+  "Stage1Tool": {
+    "log_level": "INFO",
+    "EventSource": {
+      "input_url": "../data/real/R0/20201120/LST-1.1.Run02965.0000_first400.fits.fz"
+    },
+    "DL1Writer": {
+      "output_path": "LST-1.Run02965.0000_first400.dl1.h5",
+      "write_images": true,
+      "write_parameters": false
+    },
+    "LSTEventSource": {
+      "LSTR0Corrections": {
+        "drs4_pedestal_path": "../data/real/monitoring/PixelCalibration/LevelA/drs4_baseline/20201120/v0.8.3/drs4_pedestal.Run02963.0000.h5",
+        "drs4_time_calibration_path": "../data/real/monitoring/PixelCalibration/LevelA/drs4_time_sampling_from_FF/20191124/v0.8.3/time_calibration.Run01625.0000.h5",
+        "calibration_path": "../data/real/monitoring/PixelCalibration/LevelA/calibration/20201120/v0.8.3/calibration_filters_52.Run02964.0000.h5",
+        "calib_scale_high_gain": 1.088,
+        "calib_scale_low_gain": 1.004
+      },
+      "EventTimeCalculator": {
+        "run_summary_path": "../data/real/monitoring/RunSummary/RunSummary_20201120.ecsv"
+      },
+      "PointingSource": {
+        "drive_report_path": "../data/real/monitoring/DrivePositioning/drive_log_20201120.txt"
+      }
+    },
+    "CameraCalibrator": {
+      "image_extractor_type": "LocalPeakWindowSum",
+      "LocalPeakWindowSum": {
+        "window_shift": 4,
+        "window_width": 8,
+        "apply_integration_correction": false
+      }
+    }
+  }
+}
