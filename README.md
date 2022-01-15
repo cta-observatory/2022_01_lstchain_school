@@ -2,13 +2,15 @@
 
 LST analysis school January 2022
 
-Download the repository to your computer:
+### For doing the hands-on exercises in your own computer (recommended option):
+
+#### Download the school repository to your computer:
 
 ```
 git clone https://github.com/cta-observatory/2022_01_lstchain_school.git
 ```
 
-## Install
+#### Install
 
 - You will need to install [mamba](https://github.com/conda-forge/miniforge#mambaforge) 
 
@@ -20,8 +22,9 @@ mamba env create -f environment.yml
 mamba activate lst-school
 ```
 
+This will install and activate the version 0.8.4 of lstchain in the environment "lst-school". 
 
-## LST data
+#### Downloading the LST data for the exercises
 
 We collected a subset of LST data that you should copy to your computer
 and that is needed to run the notebooks locally.
