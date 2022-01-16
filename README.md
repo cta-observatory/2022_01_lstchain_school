@@ -19,7 +19,7 @@ then, in the folder where you cloned your repo:
 
 ```
 mamba env create -f environment.yml
-mamba activate lst-school
+mamba activate lst-school-2022-01
 ```
 
 This will install and activate the version 0.8.4 of lstchain in the environment "lst-school". 
