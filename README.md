@@ -21,6 +21,10 @@ then, in the folder where you cloned your repo (2022_01_lstchain_school):
 
 ```
 mamba env create -f environment.yml
+```
+
+Anytime you want to use this environment in a new terminal, you have to activate it using:
+```
 conda activate lst-school-2022-01
 ```
 
