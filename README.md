@@ -1,6 +1,7 @@
 # 2022_01_lstchain_school
 
-LST analysis school January 2022
+LST analysis school January 2022    
+https://indico.cta-observatory.org/event/3687/
 
 ### For doing the hands-on exercises in your own computer (recommended option):
 
