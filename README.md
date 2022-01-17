@@ -22,13 +22,14 @@ then, in the folder where you cloned your repo (2022_01_lstchain_school):
 ```
 mamba env create -f environment.yml
 ```
+This will install the version 0.8.4 of lstchain in the environment "lst-school-2022-01". 
 
 Anytime you want to use this environment in a new terminal, you have to activate it using:
 ```
 conda activate lst-school-2022-01
 ```
 
-This will install and activate the version 0.8.4 of lstchain in the environment "lst-school". 
+
 
 #### Downloading the LST data for the exercises
 
