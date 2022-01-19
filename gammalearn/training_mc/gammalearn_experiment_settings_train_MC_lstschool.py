@@ -23,7 +23,7 @@ from gammalearn.metrics import AUCMultiClass
 
 
 # Experiment settings
-main_directory = '/fefs/aswg/workspace/gammalearn/Data/experiments/'  # TODO change directory if needed
+main_directory = Path(__file__).parent.joinpath('../../data/gammalearn/experiments/').absolute().as_posix()
 """str: mandatory, where the experiments are stored"""
 experiment_name = '20220121_lstschool_training_mc'
 """str: mandatory, the name of the experiment. Should be different
@@ -174,8 +174,8 @@ train = True
 """bool: mandatory, whether or not to train the model"""
 # Data settings
 train_folders = [
-    '/fefs/aswg/workspace/thomas.vuillaume/2022_01_lstchain_school/data/mc/DL1/proton/training/',
-    '/fefs/aswg/workspace/thomas.vuillaume/2022_01_lstchain_school/data/mc/DL1/gamma-diffuse/training/',
+    '../../data/mc/DL1/proton/training/',
+    '../../data/mc/DL1/gamma-diffuse/training/',
 ]  # TODO fill your folder path
 """list: mandatory, the folders where to find the hdf5 data files"""
 
@@ -300,9 +300,9 @@ test = True
 test_step = steps.test_step_mt
 """function: mandatory, the function to compute the validating step"""
 test_folders = [
-    '/fefs/aswg/workspace/thomas.vuillaume/2022_01_lstchain_school/data/mc/DL1/gamma/testing/',
-    '/fefs/aswg/workspace/thomas.vuillaume/2022_01_lstchain_school/data/mc/DL1/proton/testing/',
-    '/fefs/aswg/workspace/thomas.vuillaume/2022_01_lstchain_school/data/mc/DL1/electron/testing/',
+    '../data/mc/DL1/gamma/testing/',
+    '../data/mc/DL1/proton/testing/',
+    '../data/mc/DL1/electron/testing/',
 ]
 """list of str: optional, the folders containing the hdf5 data files for the test
 """

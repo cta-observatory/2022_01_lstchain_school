@@ -23,7 +23,7 @@ from gammalearn.metrics import AUCMultiClass
 
 
 # Experiment settings
-main_directory = "/fefs/aswg/workspace/gammalearn/Data/experiments/"
+main_directory = Path(__file__).parent.joinpath('../../data/gammalearn/experiments/').absolute().as_posix()
 """str: mandatory, where the experiments are stored"""
 experiment_name = "lstchool_real_fullytrained"
 """str: mandatory, the name of the experiment. Should be different
@@ -133,7 +133,7 @@ the loss function and its weight
 """
 
 # Net settings
-net_definition_file = "/fefs/aswg/workspace/gammalearn/software/gammalearn-data/nets.py"
+net_definition_file = utils.nets_definition_path()
 """str: mandatory, the file where to find the net definition to use"""
 # Load the network definitions module #
 spec = importlib.util.spec_from_file_location("nets", net_definition_file)
@@ -162,7 +162,7 @@ net_parameters_dic = {
 """dict: mandatory, the parameters of the network. Depends on the
 network chosen
 """
-checkpoint_path = '/fefs/aswg/workspace/gammalearn/Data/experiments/R_0956_training_complet_1_indexed/checkpoint_epoch=24.ckpt'
+checkpoint_path = Path(__file__).parent.joinpath('../../data/gammalearn/gammaPhysNet_trained/checkpoint_cpu.ckpt').resolve().as_posix()
 """str: optional, the path where to find the backup of the model to resume"""
 
 ######################################################################################################################
@@ -291,9 +291,8 @@ test = True
 """bool: mandatory, whether or not to test the model at the end of training"""
 test_step = steps.test_step_mt
 """function: mandatory, the function to compute the validating step"""
-test_folders = [ 
-    # '/fefs/aswg/workspace/analysis-school-2022/DL1ab/',
-    '/fefs/aswg/workspace/analysis-school-2022/DL1ab/',
+test_folders = [
+    Path(__file__).parent.joinpath('../../data/DL1ab/').absolute().as_posix(),
 ]
 """list of str: optional, the folders containing the hdf5 data files for the test
 """
