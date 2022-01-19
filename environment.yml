@@ -35,3 +35,4 @@ dependencies:
       - ctaplot~=0.5.5 
       - pyirf~=0.5.0
       - lstchain==0.8.4
+      - lstmcpipe==0.5.1
