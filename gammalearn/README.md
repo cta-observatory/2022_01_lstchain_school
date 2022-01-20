@@ -7,6 +7,12 @@ conda activate glearn
 
 You may replace mamba with conda.
 
+## Known issues
+
+### M1 chip or no GPU
+If you have a mac with the M1 chip or don't plan to run on GPU, simply remove the `cudatoolkit` line from the environment file.
+
+
 
 # Working at La Palma
 
