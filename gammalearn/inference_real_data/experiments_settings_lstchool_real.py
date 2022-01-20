@@ -23,16 +23,16 @@ from gammalearn.metrics import AUCMultiClass
 
 
 # Experiment settings
-main_directory = "/fefs/aswg/workspace/gammalearn/Data/experiments/"
+main_directory = Path(__file__).parent.joinpath('../../data/gammalearn/experiments/').absolute().as_posix()
 """str: mandatory, where the experiments are stored"""
-experiment_name = "lstchool_real"
+experiment_name = "lstchool_inference"
 """str: mandatory, the name of the experiment. Should be different
 for each experiment, except if one wants to resume an old experiment
 """
 info = "Inference on real data for the LST data analysis school"
 """str: optional"""
 gpus = 0
-"""int or list: mandatory, the gpus to use. If -1, run on all GPUS, 
+"""int or list: mandatory, the gpus to use. If -1, run on all GPUS,
 if None/0 run on CPU. If list, run on GPUS of list.
 """
 log_every_n_steps = 100
@@ -53,7 +53,7 @@ monitor_gpus = True
 
 dataset_class = dsets.MemoryLSTDataset
 # dataset_class = dsets.FileLSTDataset
-"""Dataset: mandatory, the Dataset class to load the data. Currently 2 classes are available, MemoryLSTDataset that 
+"""Dataset: mandatory, the Dataset class to load the data. Currently 2 classes are available, MemoryLSTDataset that
 loads images in memory, and FileLSTDataset that loads images from files during training.
 """
 dataset_parameters = {"camera_type": "LST_LSTCam",
@@ -69,7 +69,7 @@ dataset_parameters = {"camera_type": "LST_LSTCam",
 camera_type is mandatory and can be:
 "LST_LSTCam", "MST_NectarCam", "MST_FlashCam", "SST_ASTRICam", "SST1M_DigiCam", "SST_CHEC", "MST-SCT_SCTCam".
 group_by is mandatory and can be "image", "event_all_tels", "event_triggered_tels".
-particle_dict is mandatory and maps cta particle types with class id. e.g. gamma (0) is class 0, 
+particle_dict is mandatory and maps cta particle types with class id. e.g. gamma (0) is class 0,
 proton (101) is class 1 and electron (1) is class 2.
 use_time (optional): whether or not to use time information
 subarray (optional): the list of telescope ids to select as a subarray
@@ -133,7 +133,7 @@ the loss function and its weight
 """
 
 # Net settings
-net_definition_file = "/fefs/aswg/workspace/gammalearn/software/gammalearn-data/nets.py"
+net_definition_file = utils.nets_definition_path()
 """str: mandatory, the file where to find the net definition to use"""
 # Load the network definitions module #
 spec = importlib.util.spec_from_file_location("nets", net_definition_file)
@@ -162,7 +162,7 @@ net_parameters_dic = {
 """dict: mandatory, the parameters of the network. Depends on the
 network chosen
 """
-checkpoint_path = '/fefs/aswg/workspace/gammalearn/Data/experiments/20220121_analysis_lst_school/checkpoint_epoch=3.ckpt'
+checkpoint_path = Path(__file__).parent.joinpath('../../data/gammalearn/gammaPhysNet_trained/checkpoint_cpu.ckpt').resolve().as_posix()
 """str: optional, the path where to find the backup of the model to resume"""
 
 ######################################################################################################################
@@ -242,8 +242,8 @@ optimizer_parameters = {
 """dict: mandatory, defines the parameters for every optimizers to use"""
 # regularization = {"function": "gradient_penalty",
 #                   "weight": 10}
-"""dict: optional, regularization to use during the training process. See in optimizers.py for 
-available regularization functions. If `function` is set to "gradient_penalty", the training step must be 
+"""dict: optional, regularization to use during the training process. See in optimizers.py for
+available regularization functions. If `function` is set to "gradient_penalty", the training step must be
 `training_step_mt_gradient_penalty`."""
 training_step = steps.training_step_mt
 # training_step = steps.training_step_gradnorm
@@ -291,9 +291,8 @@ test = True
 """bool: mandatory, whether or not to test the model at the end of training"""
 test_step = steps.test_step_mt
 """function: mandatory, the function to compute the validating step"""
-test_folders = [ 
-    # '/fefs/aswg/workspace/analysis-school-2022/DL1ab/',
-    '/fefs/aswg/workspace/analysis-school-2022/real/DL1/',
+test_folders = [
+    Path(__file__).parent.joinpath('../../data/DL1ab/').absolute().as_posix(),
 ]
 """list of str: optional, the folders containing the hdf5 data files for the test
 """

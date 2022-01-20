@@ -32,7 +32,7 @@ for each experiment, except if one wants to resume an old experiment
 info = 'Training on MC example for LST analysis school'
 """str: optional"""
 gpus = 0
-"""int or list: mandatory, the umber of gpus to use. If -1, run on all GPUS, 
+"""int or list: mandatory, the umber of gpus to use. If -1, run on all GPUS,
 if None/0 run on CPU. If list, run on GPUS of list.
 """
 log_every_n_steps = 5
@@ -53,7 +53,7 @@ monitor_gpus = True
 
 dataset_class = dsets.MemoryLSTDataset
 # dataset_class = dsets.FileLSTDataset
-"""Dataset: mandatory, the Dataset class to load the data. Currently 2 classes are available, MemoryLSTDataset that 
+"""Dataset: mandatory, the Dataset class to load the data. Currently 2 classes are available, MemoryLSTDataset that
 loads images in memory, and FileLSTDataset that loads images from files during training.
 """
 dataset_parameters = {'camera_type': 'LST_LSTCam',
@@ -69,7 +69,7 @@ dataset_parameters = {'camera_type': 'LST_LSTCam',
 camera_type is mandatory and can be:
 'LST_LSTCam', 'MST_NectarCam', 'MST_FlashCam', 'SST_ASTRICam', 'SST1M_DigiCam', 'SST_CHEC', 'MST-SCT_SCTCam'.
 group_by is mandatory and can be 'image', 'event_all_tels', 'event_triggered_tels'.
-particle_dict is mandatory and maps cta particle types with class id. e.g. gamma (0) is class 0, 
+particle_dict is mandatory and maps cta particle types with class id. e.g. gamma (0) is class 0,
 proton (101) is class 1 and electron (1) is class 2.
 use_time (optional): whether or not to use time information
 subarray (optional): the list of telescope ids to select as a subarray
@@ -160,7 +160,7 @@ net_parameters_dic = {
 """dict: mandatory, the parameters of the network. Depends on the
 network chosen
 """
-# checkpoint_path = main_directory + '/test_install/checkpoint_epoch=3.ckpt'
+checkpoint_path = Path(__file__).parent.joinpath('../../data/gammalearn/gammaPhysNet_trained/checkpoint_cpu.ckpt').absolute().as_posix()
 """str: optional, the path where to find the backup of the model to resume"""
 
 profiler = None
@@ -174,8 +174,8 @@ train = True
 """bool: mandatory, whether or not to train the model"""
 # Data settings
 train_folders = [
-    '../../data/mc/DL1/proton/training/',
-    '../../data/mc/DL1/gamma-diffuse/training/',
+Path(__file__).parent.joinpath('../../data/mc/DL1/gamma-diffuse/training_gl/').absolute().as_posix(),
+Path(__file__).parent.joinpath('../../data/mc/DL1/proton/training_gl/').absolute().as_posix(),
 ]  # TODO fill your folder path
 """list: mandatory, the folders where to find the hdf5 data files"""
 
@@ -183,7 +183,7 @@ validating_ratio = 0.2
 """float: mandatory, the ratio of data to create the validating set"""
 split_by_file = False
 """bool: optional, whether to split data at the file level or at the data level"""
-max_epochs = 4
+max_epochs = 26
 """int: mandatory, the maximum number of epochs for the experiment"""
 batch_size = 8
 """int: mandatory, the size of the mini-batch"""
@@ -250,8 +250,8 @@ optimizer_parameters = {
 """dict: mandatory, defines the parameters for every optimizers to use"""
 # regularization = {'function': 'gradient_penalty',
 #                   'weight': 10}
-"""dict: optional, regularization to use during the training process. See in optimizers.py for 
-available regularization functions. If `function` is set to 'gradient_penalty', the training step must be 
+"""dict: optional, regularization to use during the training process. See in optimizers.py for
+available regularization functions. If `function` is set to 'gradient_penalty', the training step must be
 `training_step_mt_gradient_penalty`."""
 training_step = steps.training_step_mt
 # training_step = steps.training_step_gradnorm
@@ -300,9 +300,9 @@ test = True
 test_step = steps.test_step_mt
 """function: mandatory, the function to compute the validating step"""
 test_folders = [
-    '../data/mc/DL1/gamma/testing/',
-    '../data/mc/DL1/proton/testing/',
-    '../data/mc/DL1/electron/testing/',
+    Path(__file__).parent.joinpath('../../data/mc/DL1/gamma/testing_gl/').absolute().as_posix(),
+    Path(__file__).parent.joinpath('../../data/mc/DL1/proton/testing_gl/').absolute().as_posix(),
+    Path(__file__).parent.joinpath('../../data/mc/DL1/electron/testing_gl/').absolute().as_posix(),
 ]
 """list of str: optional, the folders containing the hdf5 data files for the test
 """
