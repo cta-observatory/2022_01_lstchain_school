@@ -4,8 +4,13 @@
 mamba env create -f environment_glearn.yml
 conda activate glearn
 ```
-
 You may replace mamba with conda.
+
+
+## Test install
+
+Running `gammalearn --version` should return 0.8
+
 
 ## Known issues
 
