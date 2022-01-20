@@ -1,0 +1,30 @@
+name: glearn
+channels:
+  - cta-observatory
+  - conda-forge
+  - anaconda
+  - defaults
+  - pytorch
+  - nvidia
+  - ctlearn-project
+dependencies:
+  - python=3.8
+  - pip
+  - pytorch
+  - torchvision
+  - nvidia::cudatoolkit>=11.1
+  - pytorch-lightning>=1.4.6
+  - ctapipe=0.10
+  - matplotlib
+  - pandas
+  - pytables
+  - astropy
+  - dl1_data_handler=0.10
+  - gammapy=0.18.2
+  - pip:
+    - indexedconv>=1.3
+    - ctaplot
+    - "lstchain>=0.7,<0.8"
+    - torch-tb-profiler
+    - lstmcpipe==0.5.1
+    - gammalearn==0.8
