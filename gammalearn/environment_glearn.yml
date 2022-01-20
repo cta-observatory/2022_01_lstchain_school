@@ -19,7 +19,7 @@ dependencies:
   - pandas
   - pytables
   - astropy
-  - dl1_data_handler=0.10
+  - dl1_data_handler=0.10.0
   - gammapy=0.18.2
   - pip:
     - indexedconv>=1.3
