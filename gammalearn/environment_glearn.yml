@@ -1,5 +1,6 @@
 name: glearn
 channels:
+  - gammalearn
   - cta-observatory
   - conda-forge
   - anaconda
@@ -26,3 +27,4 @@ dependencies:
     - lstchain~=0.7
     - torch-tb-profiler
     - gammalearn==0.7.4
+    - lstmcpipe==0.5.1
